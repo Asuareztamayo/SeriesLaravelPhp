@@ -63,9 +63,10 @@ class SerieController extends Controller
      * @param  \App\Models\Serie  $serie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Serie $serie)
+    public function edit($id)
     {
-        //
+        $serie = Serie::find($id);
+        return view('edit', ["serie"=>$serie]);
     }
 
     /**
@@ -75,9 +76,12 @@ class SerieController extends Controller
      * @param  \App\Models\Serie  $serie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Serie $serie)
+    public function update(Request $request, $id)
     {
-        //
+        $serie = Serie::find($id);
+        $serie->update($request->all());
+
+        return redirect()->route('index');
     }
 
     /**

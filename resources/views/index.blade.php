@@ -8,11 +8,17 @@
 </head>
 <body>
     <h1>Series</h1>
+    <a href="{{route('create')}}"> 
+        <button> Create New Serie</button>
+    </a>
     <ul>
         @foreach ($series as $serie)
         <li>{{$serie->name}}</li>
         <a href="{{route('seeMore', $serie->id)}}">
-            <button>Ver Más</button>
+            <button>See More</button>
+        </a>
+        <a href="{{route('edit', $serie->id)}}">
+        <button>Edit</button>
         </a>
         @endforeach
     </ul>

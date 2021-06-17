@@ -21,3 +21,8 @@ Route::get('/seeMore/{id}',[SerieController::class, 'show'])->name('seeMore');
 Route::get('/create',[SerieController::class, 'create'])->name('create');
 
 Route::post('/',[SerieController::class, 'store'])->name('store');
+
+Route::get('/edit/{id}',[SerieController::class, 'edit'])->name('edit');
+
+Route::put('/update/{id}',[SerieController::class, 'update'])->name('update');
+
